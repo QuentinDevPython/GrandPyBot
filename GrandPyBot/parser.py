@@ -16,7 +16,7 @@ class Parser:
 
     def only_key_words_in_string(self, string):
         new_string = ""
-        with open('stopwords-json/dist/fr.json') as json_list:
+        with open('GrandPyBot/stopwords-json/dist/fr.json') as json_list:
             key_word_list = json.load(json_list)
         for word in string.split(' '):
             status = False
