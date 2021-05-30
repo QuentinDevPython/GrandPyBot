@@ -2,6 +2,12 @@ import json
 
 class Parser:
 
+    def parser(self, string):
+        string = self.lower_string(string)
+        string = self.only_letters_in_string(string)
+        string = self.only_key_words_in_string(string)
+        return string
+
     def lower_string(self, string):
         return string.lower()
 
