@@ -18,3 +18,7 @@ class TestParser:
         string = self.parser.only_letters_in_string(string)
         new_string = self.parser.only_key_words_in_string(string)
         assert new_string == "tour eiffel"
+
+    def test_parser(self):
+        string = self.parser.parser(self.INPUT_STRING)
+        assert string == "tour eiffel"
