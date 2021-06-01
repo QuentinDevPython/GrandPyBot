@@ -1,4 +1,4 @@
-import parser as script
+from .. import parser as script
 
 class TestParser:
     INPUT_STRING = "Pourrais-tu me dire où se trouve la Tour Eiffel ?"
