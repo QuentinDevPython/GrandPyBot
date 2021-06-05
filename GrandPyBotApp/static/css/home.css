@@ -1,0 +1,23 @@
+#card{
+    height: 400px;
+    overflow:scroll;
+}
+
+#card_user{
+    width: 60%;
+    background-color:burlywood;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#card_bot{
+    width: 60%;
+    background-color:cadetblue;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left: 40%;
+}

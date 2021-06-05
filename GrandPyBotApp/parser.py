@@ -2,12 +2,6 @@ import json
 
 class Parser:
 
-    def parser(self, string):
-        string = self.lower_string(string)
-        string = self.only_letters_in_string(string)
-        string = self.only_key_words_in_string(string)
-        return string
-
     def lower_string(self, string):
         return string.lower()
 
@@ -22,7 +16,7 @@ class Parser:
 
     def only_key_words_in_string(self, string):
         new_string = ""
-        with open('GrandPyBot/stopwords-json/dist/fr.json') as json_list:
+        with open('GrandPyBotApp/stopwords-json/dist/fr.json') as json_list:
             key_word_list = json.load(json_list)
         for word in string.split(' '):
             status = False
@@ -33,4 +27,10 @@ class Parser:
             if not status:
                 new_string += word + ' '
         return new_string.strip()
+
+    def parser(self, string):
+        string = self.lower_string(string)
+        string = self.only_letters_in_string(string)
+        string = self.only_key_words_in_string(string)
+        return string
         
