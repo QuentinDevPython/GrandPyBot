@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block home_css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="card col-6 pl-0 pr-0">
+            <div class="card-header text-center">
+                GrandPy Bot Dialog
+            </div>
+            <div id="card" class="card-body">
+                <!-- Dialog -->
+                <p id="card_bot"> {{ response }} </p>
+            </div>
+            <div class="footer">
+                <form>
+                    <div class="form-group">
+                        <div class="row col ml-1 pr-4">
+                            <input id="form" type="text" class="form-control col" placeholder="Enter question" />
+                            <button id="submit" type="submit" class="btn btn-primary col-2"> Submit </button> 
+                        </div> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid text-center mb-5">
+    <iframe class="col-9" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23009700.266478475!2d2.6078209!3d45.25181060784534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1621624779393!5m2!1sfr!2sfr" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+{% endblock %}
