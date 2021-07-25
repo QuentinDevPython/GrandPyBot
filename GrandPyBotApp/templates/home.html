@@ -10,20 +10,20 @@
 
 <div class="container-fluid mt-5 mb-5">
     <div class="row justify-content-center">
-        <div class="card col-6 pl-0 pr-0">
+        <div class="card col-11 pl-0 pr-0">
             <div class="card-header text-center">
                 GrandPy Bot Dialog
             </div>
             <div id="card" class="card-body">
                 <!-- Dialog -->
-                <p id="card_bot"> {{ response }} </p>
+                <p class="card_bot"> {{ response }} </p>
             </div>
             <div class="footer">
                 <form>
                     <div class="form-group">
-                        <div class="row col ml-1 pr-4">
+                        <div class="row col ml-1 pr-4" id="input-form">
                             <input id="form" type="text" class="form-control col" placeholder="Enter question" />
-                            <button id="submit" type="submit" class="btn btn-primary col-2"> Submit </button> 
+                            <button id="submit" type="submit" class="btn btn-primary"> Submit </button> 
                         </div> 
                     </div>
                 </form>
@@ -32,8 +32,10 @@
     </div>
 </div>
 
-<div class="container-fluid text-center mb-5">
-    <iframe class="col-9" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23009700.266478475!2d2.6078209!3d45.25181060784534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1621624779393!5m2!1sfr!2sfr" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
+{% endblock %}
 
+{% block script %}
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqgvq_H95ho3m5U4M_mjeErXXJ5cPxhwg&callback=initMap&libraries=&v=weekly">
+</script>
 {% endblock %}
