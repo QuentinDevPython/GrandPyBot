@@ -28,6 +28,8 @@ def response():
     parser = Parser()
     parsed_sentence = parser.parser(data)
 
+    print(parsed_sentence)
+
     wikipedia = ApiWikipedia(parsed_sentence)
     response_wikipedia = wikipedia.get_information_place()
 

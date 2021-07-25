@@ -30,6 +30,10 @@
     width:60%;
 }
 
+.link{
+    color: #5e0091;
+}
+
 @media (max-width: 552px) {
     #input-form{
       display:inline-block;

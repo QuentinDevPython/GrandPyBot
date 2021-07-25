@@ -9,7 +9,7 @@ class ApiGoogleMaps:
     def get_coords_place(self):
         geocode_result = self.gmaps.geocode(self.place)
         if len(geocode_result) > 0:
-            print(geocode_result[0]["geometry"]["location"])
-            print(self.place)
+            print(geocode_result[0]["formatted_address"])
             return [geocode_result[0]["geometry"]["location"]["lng"], 
-                    geocode_result[0]["geometry"]["location"]["lat"]]
+                    geocode_result[0]["geometry"]["location"]["lat"],
+                    geocode_result[0]["formatted_address"]]

@@ -31,21 +31,36 @@ $('#submit').click(function(){
     .done(function(response){
 
         let sentence_wikipedia = JSON.stringify(response[0][1]);
-        let url_wikipedia = JSON.stringify(response[0][2]);
+        let valid_text_wikipedia = "";
+
+        for(let step=0;step<sentence_wikipedia.length;step++){
+            if(sentence_wikipedia.charAt(step) != '\\'){
+                valid_text_wikipedia += sentence_wikipedia.charAt(step);
+            }  
+            else{
+                valid_text_wikipedia += '<br>';
+                step++;
+            }  
+        }
+        let url_wikipedia = JSON.stringify(response[0][2]).slice(1,-1);
 
         number += 1;
 
         data_maps_lat = JSON.stringify(response[1][0]);
         data_maps_lng = JSON.stringify(response[1][1]);
+        formatted_address = JSON.stringify(response[1][2]);
 
         var p = document.createElement("p");
         var p1 = document.createElement("p");
         var p2 = document.createElement("p");
 
-        document.getElementById('card').appendChild(p).innerHTML = "<p class='card_bot'>" + sentence_wikipedia + "</p>";
-        document.getElementById('card').appendChild(p1).innerHTML = "<p class='card_bot'>" + url_wikipedia + "</p>";
+        
 
-        document.getElementById('card').appendChild(p2).innerHTML = "<p class='card_bot general_map_style' id='map" + number.toString() + "'>" + "</p>";
+        document.getElementById('card').appendChild(p).innerHTML = "<p class='card_bot'>" + "Bien sûr mon poussin ! La voici :" + formatted_address + "</p>";
+        document.getElementById('card').appendChild(p1).innerHTML = "<p class='card_bot general_map_style' id='map" + number.toString() + "'>" + "</p>";
+        console.log(sentence_wikipedia.replace('\n', '<br \>'));
+        document.getElementById('card').appendChild(p2).innerHTML = "<p class='card_bot'>" + valid_text_wikipedia + "<a class='link' href='" + url_wikipedia + "'> [En savoir plus sur Wikipedia]" + "</p>";
+
         console.log(number);
         initMap(data_maps_lat, data_maps_lng, number);
         
