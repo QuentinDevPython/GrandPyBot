@@ -1,41 +1,61 @@
+.card{
+    background-image:linear-gradient(#f0f0f2, #c5c5c5);
+}
+
 #card{
-    height: 400px;
+    height:670px;
     overflow:scroll;
+    background-color:#dbe1ed;   
 }
 
 #card_user{
     width: 60%;
-    background-color:burlywood;
+    background-image:linear-gradient(#cae7b5,#92d03d);
     border-radius: 10px;
     padding-left: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
     margin-top: 15px;
+    text-align: justify;
+}
+
+.color_card_header{
+    background-image:linear-gradient(#b6becc, #617293);
+    color:white;
 }
 
 .card_bot{
-    width: 60%;
-    background-color:cadetblue;
+    width: 70%;
+    background-image:linear-gradient(#fdfcfb, #cccccc);
     border-radius: 10px;
     padding-left: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
     padding-right: 10px;
-    margin-left: 40%;
-    text-align: justify;
+    margin-left: 30%;
 }
 
 .general_map_style{
-    height:200px;
-    width:60%;
+    height:300px;
+    width:70%;
 }
 
 .link{
     color: #5e0091;
 }
 
+.general_loader{
+    text-align: center;
+}
+
 @media (max-width: 552px) {
     #input-form{
       display:inline-block;
+    }
+    #card{
+        height:400px;
+    }
+    #submit{
+        width:100%;
     }
 }

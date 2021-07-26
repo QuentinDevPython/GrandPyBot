@@ -11,12 +11,13 @@
 <div class="container-fluid mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="card col-11 pl-0 pr-0">
-            <div class="card-header text-center">
+            <div class="color_card_header card-header text-center">
                 GrandPy Bot Dialog
             </div>
             <div id="card" class="card-body">
                 <!-- Dialog -->
-                <p class="card_bot"> {{ response }} </p>
+                <p class="card_bot"> {{ first_sentence }} </p>
+                
             </div>
             <div class="footer">
                 <form>
@@ -36,6 +37,6 @@
 
 {% block script %}
 <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqgvq_H95ho3m5U4M_mjeErXXJ5cPxhwg&callback=initMap&libraries=&v=weekly">
+    src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAP_KEY }}&callback=initMap&libraries=&v=weekly">
 </script>
 {% endblock %}
