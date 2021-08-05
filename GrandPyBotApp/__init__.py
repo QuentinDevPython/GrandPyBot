@@ -5,6 +5,5 @@ from . import models
 
 models.db.init_app(app)
 
-@app.cli.command()
-def initdb():
-    models.init_db()
+
+models.init_db()

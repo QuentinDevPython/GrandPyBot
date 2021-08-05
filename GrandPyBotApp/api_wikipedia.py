@@ -1,14 +1,13 @@
 import wikipedia
-import json
 
 class ApiWikipedia:
 
     def __init__(self):
-        self.wikipedia = wikipedia.set_lang('fr')
-        self.place_page = wikipedia.page("tour eiffel") #Import the page asked by the user
+        self.wikipedia = wikipedia
+        self.wikipedia.set_lang('fr')
 
-    def get_information_place(self):
-        with open('wiki_place.json', 'w') as json_file:
-            wiki_result = [self.place_page.title, self.wikipedia.summary('tour eiffel', sentences=3)]
-            if len(wiki_result) > 0:
-                json.dump(wiki_result,json_file)
+    def get_information_place(self, place):
+        place_page = self.wikipedia.page(place)
+        wiki_result = [place_page.title, self.wikipedia.summary(place, sentences=3), place_page.url]
+        if len(wiki_result) > 0:
+            return wiki_result
