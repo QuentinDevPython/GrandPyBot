@@ -7,6 +7,6 @@ if os.environ.get('DATABASE_URL') is None:
     GOOGLE_MAP_KEY = "AIzaSyAqgvq_H95ho3m5U4M_mjeErXXJ5cPxhwg"
 else:
     # Configuration pour l'environnement de production
-    SQLALCHEMY_DATABASE_URI = os.environ('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     GOOGLE_MAP_KEY = "AIzaSyDh4aiF7QYczFRpKtMQCdSJdncufoq8W_I"
 
