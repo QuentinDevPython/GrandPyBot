@@ -14,4 +14,4 @@ def test_http_result(monkeypatch):
 
     monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
 
-    assert script.ApiGoogleMaps("AIzaSyAqgvq_H95ho3m5U4M_mjeErXXJ5cPxhwg").get_coords_place("tour eiffel france") == results
+    assert script.ApiGoogleMaps().get_coords_place("tour eiffel paris") == results

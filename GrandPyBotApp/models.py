@@ -33,6 +33,13 @@ class Ask_Another_Question(db.Model):
     def __init__(self, another_question):
         self.another_question = another_question
 
+class Search_Error(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    search_error = db.Column(db.String(1000), nullable=False)
+
+    def __init__(self, search_error):
+        self.search_error = search_error
+
 db.create_all()
 
 def init_db():
@@ -43,6 +50,7 @@ def init_db():
     add_response_address(Response_Address)
     add_response_wikipedia(Response_Wikipedia_Info)
     add_another_question(Ask_Another_Question)
+    add_search_error(Search_Error)
 
     db.session.commit()
     lg.warning('Database initialised')
@@ -134,5 +142,21 @@ def add_another_question(Ask_Another_Question):
         Ask_Another_Question(
         "Ah mon enfant ! J'ai adoré pouvoir te venir en aide ! Surtout si tu as d'autres "
         "questions n'hésite pas, je serais ravi de pouvoir continuer à te parler !"
+        )
+    )
+
+def add_search_error(Search_Error):
+    db.session.add(
+        Search_Error(
+            "Désolé mon petit poussin ! Je ne connais pas le lieu dont tu me parles, est-ce "
+            "que tu es sûr de son orthographe ? Ou alors peut-être que je ne comprends pas "
+            "bien ta question, est-ce que tu pourrais la reformuler ?"
+        )
+    )
+    db.session.add(
+        Search_Error(
+            "Désolé mon kiki mais je ne vois pas du tout de quoi tu me parles .. ma mémoire "
+            "doit encore me jouer des tours ! Aaah la vieillesse ! Est-ce que tu pourrais répéter "
+            "ta question en la reformulant ?"
         )
     )
