@@ -1,4 +1,5 @@
 from .. import api_google_maps as script
+from .config import GOOGLE_MAP_KEY
 
 import urllib.request
 
@@ -14,4 +15,4 @@ def test_http_result(monkeypatch):
 
     monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
 
-    assert script.ApiGoogleMaps().get_coords_place("tour eiffel paris") == results
+    assert script.ApiGoogleMaps(GOOGLE_MAP_KEY).get_coords_place("tour eiffel paris") == results

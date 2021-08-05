@@ -1,10 +1,11 @@
 import json
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, config, render_template, request, jsonify
 
 app = Flask(__name__)
 
 app.config.from_object('config')
+GOOGLE_MAP_KEY = "AIzaSyAqgvq_H95ho3m5U4M_mjeErXXJ5cPxhwg"
 
 from .utils import find_first_sentence, find_response_address, find_response_wikipedia, find_another_question, find_search_error
 from .api_wikipedia import ApiWikipedia
@@ -27,7 +28,7 @@ def response():
     wikipedia = ApiWikipedia()
     response_wikipedia = wikipedia.get_information_place(parsed_sentence)
 
-    gmaps = ApiGoogleMaps()
+    gmaps = ApiGoogleMaps(GOOGLE_MAP_KEY)
     response_map = gmaps.get_coords_place(parsed_sentence)   
 
     return jsonify((
