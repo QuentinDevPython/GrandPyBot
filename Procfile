@@ -1,2 +1,2 @@
 web:gunicorn GrandPyBotApp:app
-init:FLASK_APP=run.py flask init_db heroku run init
+init:FLASK_APP=run.py flask init_db
