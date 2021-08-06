@@ -20,6 +20,7 @@ Have to install on your device :
 1. Run the command : `git clone https://github.com/QuentinDevPython/GrandPyBot.git`
 1. Go to the newly created project folder with: `cd GrandPyBot`
 1. Run the command : `pipenv shell`
+1. Install manually the psycopg2 library by running the command : `pip install psycopg2-binary`
 1. Then run the command : `pip install -r requirements.txt` to install the dependencies of the project
 
 The installation is now finish.
