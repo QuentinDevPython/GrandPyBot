@@ -9,18 +9,17 @@ from flask import Flask, \
 from .api_google_maps import ApiGoogleMaps
 from .parser import Parser
 from .api_wikipedia import ApiWikipedia
+
+app = Flask(__name__)
+app.config.from_object('config')
+
 from .utils import find_first_sentence, \
     find_response_address, \
     find_response_wikipedia, \
     find_another_question, \
     find_search_error
-
-
-app = Flask(__name__)
-
-app.config.from_object('config')
+    
 GOOGLE_MAP_KEY = "AIzaSyAqgvq_H95ho3m5U4M_mjeErXXJ5cPxhwg"
-
 
 @app.route('/')
 def index():
