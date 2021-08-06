@@ -1,5 +1,6 @@
+"""Import the module os to access files with their path
+in the project."""
 import os
-import re
 
 if os.environ.get('DATABASE_URL') is None:
     # Configuration pour l'environnement de développement
@@ -10,7 +11,7 @@ else:
     # Configuration pour l'environnement de production
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
-        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql://", 1)
-        
-    GOOGLE_MAP_KEY = "AIzaSyDh4aiF7QYczFRpKtMQCdSJdncufoq8W_I"
+        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace(
+            "postgres://", "postgresql://", 1)
 
+    GOOGLE_MAP_KEY = "AIzaSyDh4aiF7QYczFRpKtMQCdSJdncufoq8W_I"

@@ -1,10 +1,19 @@
-from .. import api_wikipedia as script
-
+"""Import the module urllib.request to open URLs (HTTP)
+in a complex world.
+Import also the file which is going to be tested (api_wkipedia)."""
 import urllib.request
 
+from .. import api_wikipedia as script
+
+
 def test_http_result(monkeypatch):
+    """
+    Method which compares the expected results of the API function
+    with the results obtained by this simulation
+    """
+
     results = [
-        'Tour Eiffel', 
+        'Tour Eiffel',
         'La tour Eiffel  est une tour de fer puddlé '
         'de 324 mètres de hauteur (avec antennes) '
         'située à Paris, à l’extrémité nord-ouest '
@@ -20,11 +29,11 @@ def test_http_result(monkeypatch):
         'de premier plan : il s’agit du troisième '
         'site culturel français payant le plus '
         'visité en 2015, avec 5,9 millions de '
-        'visiteurs en 2016.', 
+        'visiteurs en 2016.',
         'https://fr.wikipedia.org/wiki/Tour_Eiffel'
     ]
 
-    def mockreturn(request):
+    def mockreturn():
         return results
 
     monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
