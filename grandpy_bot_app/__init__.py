@@ -4,9 +4,6 @@ from . import models
 
 models.db.init_app(app)
 
-models.init_db()
-
-
 @app.cli.command("init_db")
 def init_db():
     """
