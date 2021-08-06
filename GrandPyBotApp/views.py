@@ -1,5 +1,3 @@
-import json
-
 from flask import Flask, config, render_template, request, jsonify
 
 app = Flask(__name__)
