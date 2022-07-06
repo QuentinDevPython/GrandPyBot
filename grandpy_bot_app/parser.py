@@ -56,3 +56,18 @@ class Parser:
         string = self.only_letters_in_string(string)
         string = self.only_key_words_in_string(string)
         return string
+
+
+
+sentence = "Je cherche Notre-Dame de Paris"
+
+parser = Parser()
+
+lower_sentence = parser.lower_string(sentence)
+print(lower_sentence)
+
+normal_sentence = parser.only_letters_in_string(lower_sentence)
+print(normal_sentence)
+
+only_key_sentence = parser.only_key_words_in_string(normal_sentence)
+print(only_key_sentence)

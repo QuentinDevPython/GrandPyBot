@@ -18,8 +18,9 @@ from .utils import find_first_sentence, \
     find_response_wikipedia, \
     find_another_question, \
     find_search_error
-    
-GOOGLE_MAP_KEY = "AIzaSyAqgvq_H95ho3m5U4M_mjeErXXJ5cPxhwg"
+
+# Configuration pour l'environnement de développement
+GOOGLE_MAP_KEY = "AIzaSyCAnKF11Od9FXT-GpagAW--hrzqCFTlTRw"
 
 @app.route('/')
 def index():

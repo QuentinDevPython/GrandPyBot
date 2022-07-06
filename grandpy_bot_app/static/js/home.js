@@ -105,12 +105,12 @@ $('#submit').click(function(event){
 
     .always(function(){
 
-        });
+    });
+    
     var text = text_in_form.value = "";
 });
 
 function initMap(data_maps_lat, data_maps_lng, number){
-    console.log('on passe dedans');
     console.log(data_maps_lat);
     console.log(data_maps_lng);
 
