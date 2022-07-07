@@ -19,7 +19,6 @@ from .utils import find_first_sentence, \
     find_another_question, \
     find_search_error
 
-# Configuration pour l'environnement de développement
 GOOGLE_MAP_KEY = "AIzaSyCAnKF11Od9FXT-GpagAW--hrzqCFTlTRw"
 
 @app.route('/')

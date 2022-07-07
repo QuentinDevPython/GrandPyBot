@@ -11,26 +11,21 @@ def test_http_result(monkeypatch):
     Method which compares the expected results of the API function
     with the results obtained by this simulation
     """
-
+    
     results = [
-        'Tour Eiffel',
-        'La tour Eiffel  est une tour de fer puddlé '
-        'de 324 mètres de hauteur (avec antennes) '
-        'située à Paris, à l’extrémité nord-ouest '
-        'du parc du Champ-de-Mars en bordure de '
-        'la Seine dans le 7e arrondissement. Son '
-        'adresse officielle est 5, avenue '
-        'Anatole-France.\nConstruite en deux ans '
-        'par Gustave Eiffel et ses collaborateurs '
-        'pour l’Exposition universelle de Paris de '
-        '1889, et initialement nommée « tour de 300 '
-        'mètres », elle est devenue le symbole de la '
-        'capitale française et un site touristique '
-        'de premier plan : il s’agit du troisième '
-        'site culturel français payant le plus '
-        'visité en 2015, avec 5,9 millions de '
-        'visiteurs en 2016.',
-        'https://fr.wikipedia.org/wiki/Tour_Eiffel'
+        'Cathédrale Notre-Dame de Paris',
+        'La cathédrale Notre-Dame de Paris, '
+        'communément appelée Notre-Dame, '
+        'est l\'un des monuments les plus '
+        'emblématiques de Paris et de la France. '
+        'Elle est située sur l\'île de la Cité et '
+        'est un lieu de culte catholique, siège de '
+        'l\'archidiocèse de Paris, dédié à la Vierge '
+        'Marie.\nCommencée sous l\'impulsion de '
+        'l\'évêque Maurice de Sully, sa construction '
+        's\'étend sur environ deux siècles, de 1163 '
+        'au milieu du XIVe siècle.',
+        'https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Notre-Dame_de_Paris'
     ]
 
     def mockreturn():
@@ -38,4 +33,4 @@ def test_http_result(monkeypatch):
 
     monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
 
-    assert script.ApiWikipedia().get_information_place("tour eiffel") == results
+    assert script.ApiWikipedia().get_information_place("notre dame paris") == results

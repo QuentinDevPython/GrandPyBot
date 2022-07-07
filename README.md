@@ -2,7 +2,7 @@
 
 The goal of this project is to interact with a robot that would respond like our grandfather.
 If we ask him for the address of a place, GrandPyBot will give it to us, of course, but not without a long and interesting story in addition.
-Are you ready? Go talk to him: http://grandpybot-quentinb.herokuapp.com
+Are you ready? Go talk to him: http://grandpybot-project.herokuapp.com
 ## To begin
 
 To get a good start with the project, you will have here some instructions concerning the pre-requisite installations and those to be done.
